@@ -1,56 +1,83 @@
 package WWW::FreshMeat::API;
+use Moose;
 
-use warnings;
-use strict;
+our $VERSION = '0.01';
+
+has 'mock' => ( isa => 'Bool', is => 'ro', default => sub { 0 } );
+
+with 'WWW::FreshMeat::API::Session', 
+     'WWW::FreshMeat::API::Agent::XML::RPC',
+     'WWW::FreshMeat::API::Pub';
+
+no Moose;
+
+1;
+
+
+__END__
+
 
 =head1 NAME
 
-WWW::FreshMeat::API - The great new WWW::FreshMeat::API!
+WWW::FreshMeat::API - inspect & update your projects on freshmeat.net
 
 =head1 VERSION
 
 Version 0.01
 
-=cut
-
-our $VERSION = '0.01';
-
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
-
-Perhaps a little code snippet.
-
     use WWW::FreshMeat::API;
+    
+    my $fm = WWW::FreshMeat::API->new;
+    
+    $fm->login( username => 'user', password => 'pass' );
+    
+    say "Your ID for this API session (SID) is ", $fm->sid;
 
-    my $foo = WWW::FreshMeat::API->new();
-    ...
+    for my $proj ( @{ $fm->fetch_project_list } ) {
+        say "Project      ", $proj->{ projectname_full }; 
+        say "- short name ", $proj->{ projectname_short };
+        say "- status"    ", $proj->{ project_status };
+        say "- version    ", $proj->{ project_version };
+    }
+
+
+=head1 DESCRIPTION
+
+FreshMeat (http://freshmeat.net) provides a very simple XML-RPC API which allows a user to inspect what projects
+the user as uploaded and also provides an update & withdrawal mechanism of the users projects.
+
+Requirements....
+
+    1) Must have a FreshMeat login & password
+
+    2) Must have already loaded project onto http://freshmeat.net
+
+For now see ./examples/freshmeat-submit.pl.
+
+More details to follow.
+
 
 =head1 EXPORT
 
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
+None
 
-=head1 FUNCTIONS
+=head1 METHODS
 
-=head2 function1
+For session methods see L<WWW::FreshMeat::API::Session>
 
-=cut
+For Freshmeats public API which are mapped to methods see L<WWW::FreshMeat::API::Pub> & L<WWW::FreshMeat::API::Pub::V1_03>
 
-sub function1 {
-}
+=head2 mock
 
-=head2 function2
+Testing method.   Not sure this will survive alpha so ignore for now!
 
-=cut
-
-sub function2 {
-}
 
 =head1 AUTHOR
 
-draegtun (Barry Walsh), C<< <draegtun at cpan.org> >>
+Barry Walsh, C<< <draegtun at cpan.org> >>
 
 =head1 BUGS
 
@@ -94,14 +121,27 @@ L<http://search.cpan.org/dist/WWW-FreshMeat-API/>
 =head1 ACKNOWLEDGEMENTS
 
 
+=head1 SEE ALSO
+
+
+=head2 Builder Source Code
+
+GitHub at  http://github.com/draegtun/www-freshmeat-api/tree/master
+
+
+=head1 DISCLAIMER
+
+This is alpha software.   It does not contain necessary tests & checks yet ;-( 
+    
+However FreshMeat API is very simple & WWW::FreshMeat::API does work for me. 
+
+I hope to make it beta status very shortly!
+
+
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2009 draegtun (Barry Walsh), all rights reserved.
+Copyright 2009 Barry Walsh (Draegtun Systems Ltd), all rights reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
 
-
-=cut
-
-1; # End of WWW::FreshMeat::API
