@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Test::More tests => 3;
+use Test::More tests => 7;
 
 sub not_in_file_ok {
     my ($filename, %regex) = @_;
@@ -36,20 +36,21 @@ sub module_boilerplate_ok {
     );
 }
 
-TODO: {
-  local $TODO = "Need to replace the boilerplate text";
-
-  not_in_file_ok(README =>
-    "The README is used..."       => qr/The README is used/,
-    "'version information here'"  => qr/to provide version information/,
-  );
-
-  not_in_file_ok(Changes =>
-    "placeholder date/time"       => qr(Date/time)
-  );
-
-  module_boilerplate_ok('lib/WWW/FreshMeat/API.pm');
 
 
-}
+not_in_file_ok(README =>
+"The README is used..."       => qr/The README is used/,
+"'version information here'"  => qr/to provide version information/,
+);
+
+not_in_file_ok(Changes =>
+"placeholder date/time"       => qr(Date/time)
+);
+
+module_boilerplate_ok('lib/WWW/FreshMeat/API.pm');
+module_boilerplate_ok('lib/WWW/FreshMeat/API/Session.pm');
+module_boilerplate_ok('lib/WWW/FreshMeat/API/Pub.pm');
+module_boilerplate_ok('lib/WWW/FreshMeat/API/Pub/V1_03.pm');
+module_boilerplate_ok('lib/WWW/FreshMeat/API/Agent/XML/RPC.pm');
+
 

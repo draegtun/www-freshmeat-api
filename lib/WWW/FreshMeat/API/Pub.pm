@@ -69,6 +69,7 @@ no Moose::Role;
 
 __END__
 
+=pod
 
 =head1 NAME
 
@@ -103,6 +104,8 @@ Where docs say returns "Array" then a ArrayRef is return.
 Where docs says returns "Struct" then HashRef is returned.
 So if docs say "Array of structs" then ArrayRef of HashRefs is returned by said method.
 
+
+
 =head2 fetch_available_licenses
 
 =head2 fetch_available_release_foci
@@ -120,6 +123,12 @@ So if docs say "Array of structs" then ArrayRef of HashRefs is returned by said 
 =head2 login
 
 =head2 logout
+
+To satisfy pod-coverage!
+
+=head2 get_api_info
+
+=head2 BUILD
 
 
 =head1 AUTHOR

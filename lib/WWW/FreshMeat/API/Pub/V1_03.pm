@@ -194,7 +194,7 @@ Version 0.01
 
 =head1 DESCRIPTION
 
-Exports on requestion get_api_info() which is simple a sub around hashref metadata.
+Exports on request get_api_info() which is simply a sub around hashref metadata.
 
 Used by WWW::FreshMeat::API::Pub to build the published API as methods.
 
@@ -265,14 +265,10 @@ http://freshmeat.net/faq/view/49/
 
 http://freshmeat.net/articles/view/1048/
 
+=head2 Other WWW::FreshMeat::API modules
 
-=head1 DISCLAIMER
+L<WWW::FreshMeat::API>
 
-This is alpha software.   It does not contain necessary tests & checks yet ;-( 
-    
-However FreshMeat API is very simple & WWW::FreshMeat::API does work for me. 
-
-I hope to make it beta status very shortly!
 
 
 =head1 COPYRIGHT & LICENSE

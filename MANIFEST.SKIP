@@ -1,0 +1,15 @@
+^\.gitignore$
+^\.git\b
+^\.DS_Store
+^_build
+^Build$
+^blib
+~$
+\.bak$
+\.old$
+^MANIFEST\.SKIP$
+CVS
+.DS_Store
+^prototype$
+pod2htmd.tmp
+pod2htmi.tmp

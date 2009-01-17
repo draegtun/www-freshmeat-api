@@ -19,7 +19,7 @@ __END__
 
 =head1 NAME
 
-WWW::FreshMeat::API - inspect & update your projects on freshmeat.net
+WWW::FreshMeat::API - inspect & update your freshmeat.net projects
 
 =head1 VERSION
 
@@ -70,9 +70,11 @@ For session methods see L<WWW::FreshMeat::API::Session>
 
 For Freshmeats public API which are mapped to methods see L<WWW::FreshMeat::API::Pub> & L<WWW::FreshMeat::API::Pub::V1_03>
 
+=head1 ATTRIBUTES
+
 =head2 mock
 
-Testing method.   Not sure this will survive alpha so ignore for now!
+Constructor only testing attribute.   Not sure this will survive alpha so ignore for now!
 
 
 =head1 AUTHOR
@@ -117,16 +119,36 @@ L<http://search.cpan.org/dist/WWW-FreshMeat-API/>
 
 =back
 
+=head1 MOTIVATIONS
+
+There certainly was!   More on that later ;-)
+
 
 =head1 ACKNOWLEDGEMENTS
+
+=head2 Moose
+
+Thanks to Stevan Little and cast of thousands for the brilliant L<Moose> module. 
+Using Moose really made developing this module simple and lots of fun!
+
+=head2 XML::RPC
+
+Thanks to Niek Albers, http://www.daansystems.com/ for his excellent L<XML::RPC> module.
 
 
 =head1 SEE ALSO
 
-
-=head2 Builder Source Code
+=head2 Source Code
 
 GitHub at  http://github.com/draegtun/www-freshmeat-api/tree/master
+
+=head2 freshmeat-submit
+
+Python script written by ESR no less!  http://freshmeat.net/projects/freshmeat-submit/
+
+freshmeat-submit was written in 2003 and last updated 2004.   
+I didn't find freshmeat-submit to be useful to me when writing WWW::FreshMeat::API.
+Fingers crossed WWW::FreshMeat::API won't look as crufty as freshmeat-submit does after 5 and bit years ;-)
 
 
 =head1 DISCLAIMER

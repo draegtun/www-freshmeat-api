@@ -51,7 +51,7 @@ This is a Moose role used by WWW::FreshMeat::API providing session attributes & 
 None.
 
 
-=head ATTRIBUTES
+=head1 ATTRIBUTES
 
 =head2 session
 
