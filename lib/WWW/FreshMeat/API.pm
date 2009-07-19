@@ -1,7 +1,7 @@
 package WWW::FreshMeat::API;
 use Moose;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 has 'mock' => ( isa => 'Bool', is => 'ro', default => sub { 0 } );
 
@@ -23,10 +23,29 @@ WWW::FreshMeat::API - inspect & update your freshmeat.net projects
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 
 =head1 SYNOPSIS
+
+** IMPORTANT ANNOUNCEMENT **
+
+Circa April 2009 Freshmeat relaunched their site and completely dropped the XML-RPC API :(
+
+In place is a new Freshmeat API 3.0 using REST JSON (or XML).
+
+Its not clear how stable this API is.    I'll look more closely at this in a few months 
+time and perform necessary surgery on this module.
+
+So note this module will not work in its present state until I make investigate the new API 
+& changes source code changes.
+
+Very sorry about this.
+
+BW 19-Jul-2009
+
+** END OF ANNOUCEMENT **
+
 
     use WWW::FreshMeat::API;
     

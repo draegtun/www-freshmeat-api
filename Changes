@@ -4,4 +4,7 @@ Revision history for WWW-FreshMeat-API
     * First version, released on an unsuspecting world.
       - alpha version... but it does work!
       - turned into CPAN module from dirty prototypes (see initial git commits)
-
+      
+0.02    Sun July 19, 2009
+    * Service announcement... Freshmeat have dropped the XML-RPC API
+      - Made annoucement changes to Readme & API.pm

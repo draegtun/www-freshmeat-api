@@ -1,6 +1,6 @@
 ---
 name: WWW-FreshMeat-API
-version: 0.01
+version: 0.02
 author:
   - 'Barry Walsh <draegtun@cpan.org>'
 abstract: inspect & update your freshmeat.net projects
@@ -14,7 +14,7 @@ build_requires:
 provides:
   WWW::FreshMeat::API:
     file: lib/WWW/FreshMeat/API.pm
-    version: 0.01
+    version: 0.02
   WWW::FreshMeat::API::Agent::XML::RPC:
     file: lib/WWW/FreshMeat/API/Agent/XML/RPC.pm
     version: 0.01
